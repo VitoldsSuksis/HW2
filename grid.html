@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <style>
+        .wrapper {
+            height: 100vh;
+            margin: 0;
+            display: grid;
+            grid-template-rows: 30px 30px 50px 50px 100px 1fr 40px;
+            grid-template-columns: 1fr 200px;
+            grid-gap: 1em;
+            grid-template-areas: "header header" "header header" "hero ads" "hero ads" "content sidebar" "content sidebar" "footer footer"
+        }
+        
+        @media (min-width: 578px) and (max-width: 992px) {
+            .wrapper {
+                grid-template-areas: "header header" "header header" "hero hero" "hero hero" "content content" "content content" "sidebar sidebar" "footer footer";
+                grid-template-rows: 30px 30px 50px 50px 100px 1fr 50px 40px;
+                grid-template-columns: 1fr 200px;
+            }
+            .ads {
+                grid-row: 5 !important;
+                grid-column: 2 !important;
+            }
+        }
+        
+        @media (min-width: 320px) and (max-width: 576px) {
+            .wrapper {
+                grid-template-areas: "header" "header" "hero" "content" "content" "content" "footer";
+                grid-template-rows: 30px 30px 100px 100px 100px 1fr 40px;
+                grid-template-columns: 1fr;
+            }
+            .ads {
+                grid-row: 5 !important;
+                grid-column: 1 !important;
+            }
+            .sidebar {
+                display: none;
+            }
+        }
+        
+        .box {
+            background-color: #999;
+            color: #fff;
+            border-radius: 0;
+            padding: 10px;
+            font-size: 150%;
+        }
+        
+        .header {
+            grid-area: header;
+        }
+        
+        .hero {
+            grid-area: hero;
+        }
+        
+        .content {
+            grid-area: content;
+        }
+        
+        .sidebar {
+            grid-area: sidebar;
+        }
+        
+        .ads {
+            grid-area: ads;
+            background-color: #444;
+        }
+        
+        .footer {
+            grid-area: footer;
+        }
+        
+        .header>div {
+            background: lightblue;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-gap: 5px;
+        }
+    </style>
+    <div class="wrapper">
+        <div class="box header">
+            <div class="h-chil1">hhh</div>
+            <div class="h-chil2">ddd</div>
+            <div class="h-chil3">ssss</div>
+        </div>
+        <div class="box hero">Hero</div>
+        <div class="box content">Body</div>
+        <div class="box sidebar">Sidebar</div>
+        <div class="box ads">Ads</div>
+        <div class="box footer">Footer</div>
+    </div>
+</body>
+
+</html>

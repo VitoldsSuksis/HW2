@@ -1,0 +1,155 @@
+.wrapper {
+    display: grid;
+    height: 100vh;
+    margin: 5px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-gap: 10px;
+    
+    grid-template-areas: "header header header header"
+    "hero hero hero ad" "content content content sidebar" 
+    "content content content sidebar"
+     "footer footer footer footer"
+     
+}
+
+
+.box {
+    background-color: rgb(211, 198, 198);
+    color: rgb(7, 6, 6);
+    border-radius: 0;
+    padding: 10px;
+    font-size: 130%;
+    text-align: center;
+    
+}
+
+header {
+    grid-area: header;
+}
+
+footer {
+    grid-area: footer;
+}
+
+hero {
+    grid-area: hero;
+    
+}
+
+ad {
+    grid-area: ad;
+    /* background-color: green !important; */
+    background-image:url('rieksti.jpg');
+     
+}
+
+content {
+    grid-area: content;
+}
+
+sidebar {
+    grid-area: sidebar;
+}
+
+ .galva {
+    display:grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-column-gap: 1em;
+    
+}
+.galva .box {
+    background-color: lightblue;
+    
+}
+
+.varonis {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    grid-column-gap: 1em;
+}
+
+.varonis .box {
+    background-color: lightblue;
+}
+
+.bodijs {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-column-gap: 1em;
+}
+
+.bodijs .box {
+    background-color: lightblue;
+}
+
+.mala {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-column-gap: 1em;
+}
+
+.mala .box {
+    background-color: lightblue;
+}
+
+.kaja {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-column-gap: 1em;
+}
+
+.kaja .box{
+    background-color: lightblue;
+
+}
+
+
+@media (min-width: 320px) and (max-width: 577px) {
+    .wrapper {
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        "header"
+         "hero" 
+         "content"
+         "content"
+         "content"         
+         "footer"
+    }
+    sidebar {
+        display: none !important;
+    }
+    ad {
+        grid-row: 4 !important;
+        grid-column: 1 !important;
+        z-index: 2;
+        background-image:url('rieksti.jpg');
+    }
+
+}
+
+@media (min-width: 578px) and (max-width: 992px) {
+    .wrapper {
+         grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-areas:
+         "header header header header"
+          "hero hero hero hero"
+           "content content content content" 
+           "content content content content"
+           "sidebar sidebar sidebar sidebar"
+            "footer footer footer footer"
+    }
+    
+    ad {
+        grid-row: 3 !important;
+        grid-column: 4 !important;
+        z-index: 4;
+        background-image: url('rieksti.jpg');
+    }
+    /* sidebar {
+        display: none !important;
+    } */
+ 
+    
+}
